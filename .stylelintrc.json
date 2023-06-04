@@ -1,7 +1,12 @@
 {
-  "extends": "stylelint-config-standard-scss",
-  "plugins": ["stylelint-selector-bem-pattern"],
+  "cache": true,
+  "fix": true,
+  "extends": [
+    "stylelint-config-standard"
+  ],
   "rules": {
-    "no-descending-specificity": null
+    "no-empty-source": null,
+    "declaration-vazio-line-before": null,
+    "no-missing-end-of -source-newline": null
   }
 }
