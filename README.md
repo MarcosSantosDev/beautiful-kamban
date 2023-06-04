@@ -1,6 +1,4 @@
-<div align="center">
-    <img src="./public/next.svg" width="200" alt="Logo Nexjs">
-</div>
+# Beautiful Kamban
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -11,44 +9,12 @@
 - node(versions 14.x.x or later)
 - npm(versions 5.x.x or later)
 
-## 🔨 Tools
-
-**Linter tools setup**
-
-- [commitlint](https://commitlint.js.org/)
-- [commitizen](https://commitizen-tools.github.io/commitizen/)
-- [stylelint](https://stylelint.io/)
-- [eslint](https://eslint.org/)
-- [prettier](https://prettier.io/)
-
-**Git hooks(pre-commit, commit-msg)**
-
-- [husky](https://typicode.github.io/husky/)
-- [lint-staged(Run linters on git staged files)](https://github.com/okonet/lint-staged)
-
-**Enviroment to tests**
-
-- [cypress(E2E)](https://www.cypress.io/)
-- [jest(unit/integration tests)](https://jestjs.io/pt-BR/)
-
-**Internacionalization**
-
-- [next-i18next (PT, EN)](https://next.i18next.com/)
-
-**Modules style**
-
-- [sass](https://sass-lang.com/)
-
-**Generators**
-
-- [plopjs](https://plopjs.com)
-
 ## 🚀 Initial steps
 
 Clone the project:
 
 ```
-git clone https://github.com/MarcosSantosDev/nextjs-playground.git
+git clone https://github.com/MarcosSantosDev/beautiful-kamban.git
 ```
 
 Install the dependencies:
@@ -95,20 +61,6 @@ To `run` and `watch` the integration and unit tests, run the following command i
 npm run test:watch
 ```
 
-### How to run E2E tests ?
-
-To run your end-to-end tests and view the results in the terminal, run the following command in your terminal:
-
-```
-npm run ci:e2e:headless
-```
-
-To open and run your end-to-end tests in the cypress playground, run the following command in your terminal:
-
-```
-npm run ci:e2e
-```
-
 ## 🤝 Contributing to the project
 
 ### To contribute, follow these steps:
@@ -126,4 +78,3 @@ npm run ci:e2e
 ## :warning: Standards adopted in the project
 
 - [Git](./docs/git.md)
-- [Sass](./docs/sass.md)
