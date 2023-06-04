@@ -78,3 +78,4 @@ npm run test:watch
 ## :warning: Standards adopted in the project
 
 - [Git](./docs/git.md)
+- [Styles](./docs/styles.md)
