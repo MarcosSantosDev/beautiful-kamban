@@ -1,13 +1,29 @@
-/* eslint-disable react/no-danger */
-import React from 'react';
-import NextDocument, { Head, Html, Main, NextScript } from 'next/document';
+import { resetServerContext } from 'react-beautiful-dnd';
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document';
 
 import { getCssText } from '@/styles/stitches.config';
 
-export default class Document extends NextDocument {
+class MyDocument extends Document {
+  static async getInitialProps(
+    ctx: DocumentContext,
+  ): Promise<DocumentInitialProps> {
+    const initialProps = await Document.getInitialProps(ctx);
+
+    resetServerContext();
+
+    return initialProps;
+  }
+
   render() {
     return (
-      <Html lang="en">
+      <Html>
         <Head>
           <style
             id="stitches"
@@ -22,3 +38,5 @@ export default class Document extends NextDocument {
     );
   }
 }
+
+export default MyDocument;
