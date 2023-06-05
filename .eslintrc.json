@@ -13,12 +13,7 @@
     "es6": true,
     "jest": true
   },
-  "plugins": [
-    "@typescript-eslint",
-    "simple-import-sort",
-    "testing-library",
-    "cypress"
-  ],
+  "plugins": ["@typescript-eslint", "simple-import-sort", "testing-library"],
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
@@ -26,8 +21,7 @@
     "prettier",
     "plugin:prettier/recommended",
     "plugin:security/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:cypress/recommended"
+    "plugin:react-hooks/recommended"
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
