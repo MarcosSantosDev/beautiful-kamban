@@ -1,5 +1,6 @@
-import { GetStaticProps } from 'next';
 import Head from 'next/head';
+
+import KambanModule from '@/common/modules/kamban/kamban';
 
 export default function Kamban() {
   return (
@@ -7,10 +8,7 @@ export default function Kamban() {
       <Head>
         <title>Beautiful Kamban</title>
       </Head>
-
-      <div>
-        <h1>Beautiful Kamban</h1>
-      </div>
+      <KambanModule />
     </>
   );
 }
