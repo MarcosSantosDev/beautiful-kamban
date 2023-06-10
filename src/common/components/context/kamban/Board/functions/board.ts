@@ -1,6 +1,13 @@
-import type { CardData, ListData } from '../mocks/board';
+import {
+  CardData,
+  ColumnData,
+} from '@/common/components/context/kamban/Board/types';
 
-function moveItem<T>(items: T[], fromIndex: number, toIndex: number) {
+function moveItemBetweenItems<T>(
+  items: T[],
+  fromIndex: number,
+  toIndex: number,
+) {
   const item = items.splice(fromIndex, 1)[0];
 
   items.splice(toIndex, 0, item);
@@ -8,9 +15,9 @@ function moveItem<T>(items: T[], fromIndex: number, toIndex: number) {
   return items;
 }
 
-type MoveItemBetweenListsParams = {
-  originalList: ListData[];
-  itemIndexMovementBetweenLists: {
+type MoveItemBetweenColumnsParams = {
+  originalColumnList: ColumnData[];
+  itemIndexMovementBetweenColumns: {
     from: string;
     to: string;
   };
@@ -21,51 +28,57 @@ type MoveItemBetweenListsParams = {
 };
 
 export function orderItemBetweenLists({
-  originalList,
-  itemIndexMovementBetweenLists,
+  originalColumnList,
+  itemIndexMovementBetweenColumns,
   itemIndexMovement,
-}: MoveItemBetweenListsParams) {
-  if (itemIndexMovementBetweenLists.to === itemIndexMovementBetweenLists.from) {
-    const updateItemOnTheList = originalList.map(list => {
-      if (list.id === itemIndexMovementBetweenLists.to) {
-        return {
-          ...list,
-          cards: moveItem<CardData>(
-            list.cards,
-            Number(itemIndexMovement.from),
-            Number(itemIndexMovement.to),
-          ),
-        };
-      }
+}: MoveItemBetweenColumnsParams) {
+  if (
+    itemIndexMovementBetweenColumns.to === itemIndexMovementBetweenColumns.from
+  ) {
+    const updateItemOnTheColumnList: ColumnData[] = originalColumnList.map(
+      column => {
+        if (column.id === itemIndexMovementBetweenColumns.to) {
+          const listWithNewOrder: ColumnData = {
+            ...column,
+            items: moveItemBetweenItems<CardData>(
+              column.items,
+              Number(itemIndexMovement.from),
+              Number(itemIndexMovement.to),
+            ),
+          };
 
-      return list;
-    });
+          return listWithNewOrder;
+        }
 
-    return updateItemOnTheList;
+        return column;
+      },
+    );
+
+    return updateItemOnTheColumnList;
   }
 
-  const listFound = originalList.find(list => {
-    return list.id === itemIndexMovementBetweenLists.from;
+  const columnListFound = originalColumnList.find(column => {
+    return column.id === itemIndexMovementBetweenColumns.from;
   });
 
-  if (listFound) {
-    const cardMoved = listFound.cards.splice(
+  if (columnListFound) {
+    const itemMoved = columnListFound.items.splice(
       Number(itemIndexMovement.from),
       1,
     )[0];
 
-    const updateItemOnTheList = originalList.map(list => {
-      if (list.id === itemIndexMovementBetweenLists.to) {
-        list.cards.splice(Number(itemIndexMovement.to), 0, cardMoved);
+    const updateItemOnTheColumnList = originalColumnList.map(column => {
+      if (column.id === itemIndexMovementBetweenColumns.to) {
+        column.items.splice(Number(itemIndexMovement.to), 0, itemMoved);
 
-        return list;
+        return column;
       }
 
-      return list;
+      return column;
     });
 
-    return updateItemOnTheList;
+    return updateItemOnTheColumnList;
   }
 
-  return originalList;
+  return originalColumnList;
 }

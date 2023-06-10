@@ -1,57 +1,21 @@
 import * as React from 'react';
-import { DragDropContext, DropResult } from 'react-beautiful-dnd';
+import { DragDropContext } from 'react-beautiful-dnd';
 
-import List from './components/List/List';
-import { orderItemBetweenLists } from './functions/board';
-import { data } from './mocks/board';
+import Column from './components/Column/Column';
+import { useBoard } from './hooks/useBoad';
 import * as S from './Board.styles';
 
 function Board() {
-  const [listData, setListData] = React.useState(data);
-
-  const onDragEnd = React.useCallback(
-    (result: DropResult) => {
-      // dropped outside the list
-      if (!result.destination) {
-        return;
-      }
-      // destination
-      const destinationIndex = result.destination.index;
-      const destinationDroppableId = result.destination.droppableId;
-
-      // source
-      const sourceIndex = result.source.index;
-      const sourceDroppableId = result.source.droppableId;
-
-      const indexIsEqual = destinationIndex === sourceIndex;
-      const droppableIsEqual = destinationDroppableId === sourceDroppableId;
-
-      if (indexIsEqual && droppableIsEqual) {
-        return;
-      }
-
-      setListData(originalList =>
-        orderItemBetweenLists({
-          originalList,
-          itemIndexMovementBetweenLists: {
-            from: sourceDroppableId,
-            to: destinationDroppableId,
-          },
-          itemIndexMovement: {
-            from: sourceIndex.toString(),
-            to: destinationIndex.toString(),
-          },
-        }),
-      );
-    },
-    [setListData],
-  );
+  const listType = 'TASKS';
+  const { columnList, onDragEnd } = useBoard();
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <S.BoardContainer>
-        {listData.map(list => (
-          <List key={list.title} {...list} />
+        {columnList.map(({ id, title, items }) => (
+          <Column key={title} listTitle={title}>
+            <Column.List listId={id} listType={listType} listData={items} />
+          </Column>
         ))}
       </S.BoardContainer>
     </DragDropContext>

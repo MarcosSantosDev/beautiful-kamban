@@ -1,19 +1,10 @@
-export type CardData = {
-  id: string;
-  content: string;
-};
+import { ColumnData } from '../types';
 
-export type ListData = {
-  id: string;
-  title: string;
-  cards: CardData[];
-};
-
-export const data: ListData[] = [
+export const mockColumnList: ColumnData[] = [
   {
     id: '1',
     title: 'Tarefas',
-    cards: [
+    items: [
       {
         id: '1',
         content: 'Ler documentação da biblioteca stitches',
@@ -30,15 +21,59 @@ export const data: ListData[] = [
         id: '4',
         content: 'Criar um projeto com a biblioteca react-beautiful-dnd',
       },
+      {
+        id: '5',
+        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
+      },
+      {
+        id: '6',
+        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
+      },
+      {
+        id: '7',
+        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
+      },
+      {
+        id: '8',
+        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
+      },
+      {
+        id: '9',
+        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
+      },
+      {
+        id: '10',
+        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
+      },
     ],
   },
   {
     id: '2',
     title: 'Fazendo',
-    cards: [
+    items: [
       {
-        id: '5',
+        id: '25',
         content: 'Criar uma poc utilizando Nextjs + stitches + radix',
+      },
+    ],
+  },
+  {
+    id: '3',
+    title: 'Feito',
+    items: [
+      {
+        id: '26',
+        content: 'Levantar ideias para nova poc',
+      },
+    ],
+  },
+  {
+    id: '4',
+    title: 'Testando',
+    items: [
+      {
+        id: '27',
+        content: 'Criar um componente utilizando stitches + radix',
       },
     ],
   },

@@ -1,16 +1,13 @@
 import * as React from 'react';
 
 import Board from '@/common/components/context/kamban/Board/Board';
-
-import * as S from './kamban.styles';
+import { TemplateApp } from '@/common/components/templates';
 
 function KambanModule() {
   return (
-    <S.Container>
-      <S.KambanContainer>
-        <Board />
-      </S.KambanContainer>
-    </S.Container>
+    <TemplateApp>
+      <Board />
+    </TemplateApp>
   );
 }
 
