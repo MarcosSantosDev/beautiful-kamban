@@ -1,11 +1,12 @@
-import { Roboto } from "next/font/google";
-import type * as Stitches from '@stitches/react'
-import { createStitches } from '@stitches/react'
+import { slate, tealA } from '@radix-ui/colors';
+import type * as Stitches from '@stitches/react';
+import { createStitches } from '@stitches/react';
+import { Roboto } from 'next/font/google';
 
 const roboto = Roboto({
-  subsets: ["latin"],
-  fallback: ["sans-serif"],
-  weight: ["100", "300", "400", "500", "700", "900"]
+  subsets: ['latin'],
+  fallback: ['sans-serif'],
+  weight: ['100', '300', '400', '500', '700', '900'],
 });
 
 export const {
@@ -18,7 +19,11 @@ export const {
   theme,
 } = createStitches({
   theme: {
-    colors: {},
+    colors: {
+      white: '#fff',
+      ...slate,
+      ...tealA,
+    },
     space: {
       1: '4px',
       2: '8px',
@@ -29,7 +34,7 @@ export const {
       7: '28px',
       8: '32px',
       9: '36px',
-      10: '40px'
+      10: '40px',
     },
     sizes: {
       1: '4px',
@@ -41,7 +46,7 @@ export const {
       7: '28px',
       8: '32px',
       9: '36px',
-      10: '40px'
+      10: '40px',
     },
     fontSizes: {
       1: '0.4rem',
@@ -53,7 +58,7 @@ export const {
       7: '2.8rem',
       8: '3.2rem',
       9: '3.6rem',
-      10: '4rem'
+      10: '4rem',
     },
     fonts: {
       roboto: `${roboto.style.fontFamily}`,
@@ -70,7 +75,7 @@ export const {
       9: '36px',
       10: '40px',
       circle: '100%',
-    }
+    },
   },
   utils: {
     marginX: (value: Stitches.PropertyValue<'margin'>) => ({
@@ -97,4 +102,4 @@ export const {
     desktop: '(min-width: 992px)',
     screemsXlarge: '(min-width: 1200px)',
   },
-})
+});

@@ -7,8 +7,6 @@ module.exports = {
     `npx eslint --fix ${filenames.join(' ')}`,
     `npx prettier --write ${filenames.join(' ')}`,
   ],
-  // this will Format style files
-  '**/*.scss': filenames => `npx stylelint ${filenames.join(' ')}`,
 
   // this will Format HTML, MarkDown and JSON
   '**/*.(html|md|json)': filenames =>
