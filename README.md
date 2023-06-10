@@ -2,6 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+Preview:
+![Screenshot from 2023-06-10 20-08-42](https://github.com/MarcosSantosDev/beautiful-kamban/assets/26147340/1f764c89-f851-4f2b-a051-45eb5884ee67)
+
 ## 💻 Prerequisites
 
 ### Before you begin, make sure you've met the following requirements:
