@@ -1,80 +1,34 @@
-import { ColumnData } from '../types';
+import { faker } from '@faker-js/faker/locale/pt_BR';
 
-export const mockColumnList: ColumnData[] = [
-  {
-    id: '1',
-    title: 'Tarefas',
-    items: [
-      {
-        id: '1',
-        content: 'Ler documentação da biblioteca stitches',
+import { CardData, ColumnData } from '../types';
+
+function createRandomColumnItems() {
+  return {
+    id: faker.string.nanoid(12),
+    content: faker.commerce.product(),
+  };
+}
+
+function createRandomColumns() {
+  return {
+    id: faker.string.nanoid(10),
+    title: faker.commerce.department(),
+    items: faker.helpers.multiple<CardData>(createRandomColumnItems, {
+      count: {
+        min: 2,
+        max: 10,
       },
-      {
-        id: '2',
-        content: 'Ler documentação da biblioteca de componentes radix',
-      },
-      {
-        id: '3',
-        content: 'Estudar a biblioteca react-beautiful-dnd',
-      },
-      {
-        id: '4',
-        content: 'Criar um projeto com a biblioteca react-beautiful-dnd',
-      },
-      {
-        id: '5',
-        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
-      },
-      {
-        id: '6',
-        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
-      },
-      {
-        id: '7',
-        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
-      },
-      {
-        id: '8',
-        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
-      },
-      {
-        id: '9',
-        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
-      },
-      {
-        id: '10',
-        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
-      },
-    ],
-  },
-  {
-    id: '2',
-    title: 'Fazendo',
-    items: [
-      {
-        id: '25',
-        content: 'Criar uma poc utilizando Nextjs + stitches + radix',
-      },
-    ],
-  },
-  {
-    id: '3',
-    title: 'Feito',
-    items: [
-      {
-        id: '26',
-        content: 'Levantar ideias para nova poc',
-      },
-    ],
-  },
-  {
-    id: '4',
-    title: 'Testando',
-    items: [
-      {
-        id: '27',
-        content: 'Criar um componente utilizando stitches + radix',
-      },
-    ],
-  },
-];
+    }),
+  };
+}
+
+export function generateColumnList(): ColumnData[] {
+  const data = faker.helpers.multiple<ColumnData>(createRandomColumns, {
+    count: {
+      min: 2,
+      max: 10,
+    },
+  });
+
+  return data;
+}

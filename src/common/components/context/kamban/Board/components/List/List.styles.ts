@@ -33,14 +33,8 @@ export const Wrapper = styled('div', {
 export const ScrollContainer = styled('div', {
   width: '100%',
   height: '100%',
-  overflowY: 'hidden',
-  paddingLeft: '$3',
-  paddingRight: '$1',
-  scrollbarWidth: '$2',
-  scrollbarGutter: 'stable',
-  '&:hover': {
-    overflowY: 'auto',
-  },
+  paddingX: '$3',
+  overflowY: 'auto',
 });
 
 export const DropZone = styled('ul', {

@@ -2,10 +2,11 @@ import * as React from 'react';
 import { DropResult } from 'react-beautiful-dnd';
 
 import { orderItemBetweenLists } from '../functions/board';
-import { mockColumnList } from '../mocks/board';
+import { generateColumnList } from '../mocks/board';
+import { ColumnData } from '../types';
 
 export const useBoard = () => {
-  const [columnList, setColumnList] = React.useState(mockColumnList);
+  const [columnList, setColumnList] = React.useState<ColumnData[]>([]);
 
   const onDragEnd = React.useCallback(
     (result: DropResult) => {
@@ -44,6 +45,11 @@ export const useBoard = () => {
     },
     [setColumnList],
   );
+
+  React.useEffect(() => {
+    const data = generateColumnList();
+    setColumnList(data);
+  }, [setColumnList]);
 
   return {
     onDragEnd,

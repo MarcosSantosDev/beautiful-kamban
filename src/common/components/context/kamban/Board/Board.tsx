@@ -13,7 +13,7 @@ function Board() {
     <DragDropContext onDragEnd={onDragEnd}>
       <S.BoardContainer>
         {columnList.map(({ id, title, items }) => (
-          <Column key={title} listTitle={title}>
+          <Column key={id} listTitle={title}>
             <Column.List listId={id} listType={listType} listData={items} />
           </Column>
         ))}
