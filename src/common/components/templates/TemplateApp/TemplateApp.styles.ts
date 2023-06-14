@@ -2,7 +2,7 @@ import { templateApp } from '@/common/constants/templates';
 import { styled } from '@/styles/stitches.config';
 
 export const TemplateAppContainer = styled('div', {
-  background: '$tealA2',
+  backgroundColor: '$tealA2',
   height: '100vh',
   display: 'grid',
   gridTemplate: `
@@ -35,6 +35,6 @@ export const ChildContainer = styled('div', {
 export const XPTOContent = styled('div', {
   width: '100%',
   height: '100%',
-  background: '$tealA6',
+  backgroundColor: '$tealA6',
   borderRadius: '$4',
 });

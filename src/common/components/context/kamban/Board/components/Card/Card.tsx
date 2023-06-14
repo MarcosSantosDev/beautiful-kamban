@@ -1,9 +1,14 @@
 import * as React from 'react';
-import { AvatarIcon, BackpackIcon } from '@radix-ui/react-icons';
+import {
+  AvatarIcon,
+  BackpackIcon,
+  ClockIcon,
+  CounterClockwiseClockIcon,
+  StopwatchIcon,
+} from '@radix-ui/react-icons';
 
 import { CardData } from '@/common/components/context/kamban/Board/types';
-
-import PriorityTag from '../PriorityTag/PriorityTag';
+import { Checkbox } from '@/common/components/form';
 
 import * as S from './Card.styles';
 
@@ -15,11 +20,10 @@ function Card({ data }: CardProps) {
   return (
     <S.CardContainer>
       <S.CardHeader>
-        <p>EXAMPLE</p>
+        <Checkbox name="card" size="sm" />
+        <S.Heading>{data.content}</S.Heading>
       </S.CardHeader>
       <S.CardContent>
-        <PriorityTag priority="low" />
-        <S.Heading>{data.content}</S.Heading>
         <S.DetailsList>
           <S.DetailsItem>
             <S.IconContent>
@@ -41,6 +45,17 @@ function Card({ data }: CardProps) {
           </S.DetailsItem>
         </S.DetailsList>
       </S.CardContent>
+      <S.CardFooter>
+        <S.FooterContent>
+          <ClockIcon width={16} height={16} /> <span>20d</span>
+        </S.FooterContent>
+        <S.FooterContent>
+          <StopwatchIcon width={16} height={16} /> <span>20d</span>
+        </S.FooterContent>
+        <S.FooterContent>
+          <CounterClockwiseClockIcon width={16} height={16} /> <span>20d</span>
+        </S.FooterContent>
+      </S.CardFooter>
     </S.CardContainer>
   );
 }

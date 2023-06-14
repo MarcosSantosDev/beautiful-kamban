@@ -6,15 +6,11 @@ export const globalStyles = globalCss({
     padding: 0,
     boxSizing: 'border-box',
     '&::-webkit-scrollbar': {
-      width: '$2',
-      height: '$2',
+      width: '$1',
+      height: '$1',
     },
     '&::-webkit-scrollbar-button': {},
-    '&::-webkit-scrollbar-track': {
-      backgroundColor: '$slate5',
-      width: '$10',
-      height: '$10',
-    },
+    '&::-webkit-scrollbar-track': {},
     '&::-webkit-scrollbar-track-piece': {},
     '&::-webkit-scrollbar-thumb': {
       backgroundColor: '$slate8',

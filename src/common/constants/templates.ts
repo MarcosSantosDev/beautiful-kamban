@@ -8,4 +8,7 @@ export const templateApp = {
   sidebar: {
     width: '300px',
   },
+  boadContainer: {
+    marginBottom: theme.sizes[4],
+  },
 };

@@ -7,19 +7,15 @@ export const Wrapper = styled('div', {
   userSelect: 'none',
   transition: 'background-color 0.2s ease, opacity 0.1s ease',
   opacity: 'inherit',
-  borderRadius: '$1',
-  border: '1px solid',
-  borderColor: '$slate8',
-  background: '$slate3',
   variants: {
     isDraggingOver: {
       true: {
-        backgroundColor: '$tealA3',
+        backgroundColor: '$slate3',
       },
     },
     isDraggingFrom: {
       true: {
-        backgroundColor: '$tealA3',
+        backgroundColor: '$slate3',
       },
     },
     isDropDisabled: {
@@ -33,7 +29,7 @@ export const Wrapper = styled('div', {
 export const ScrollContainer = styled('div', {
   width: '100%',
   height: '100%',
-  paddingX: '$3',
+  padding: '$3',
   overflowY: 'auto',
 });
 
@@ -42,5 +38,4 @@ export const DropZone = styled('ul', {
   flexDirection: 'column',
   gap: '$3',
   minHeight: '100%',
-  paddingY: '$3',
 });

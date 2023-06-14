@@ -1,12 +1,24 @@
 import { templateApp } from '@/common/constants/templates';
-import { styled } from '@/styles/stitches.config';
+import { styled, theme } from '@/styles/stitches.config';
+
+const { navbar, boadContainer } = templateApp;
+
+const boadContainerSpaces = `calc($4 + ${boadContainer.marginBottom})`;
+
+const columnHead = `${theme.sizes[12]}`;
+const columnFoot = `${theme.sizes[12]}`;
+const columnMarginBottom = `${theme.sizes[4]}`;
+const columnList = `calc((100vh - ${navbar.height}) - (${columnHead} + ${columnFoot} + ${boadContainerSpaces}))`;
 
 export const ContainerColumn = styled('div', {
-  $$contentWithoutNavbarHeight: `(100vh - ${templateApp.navbar.height})`,
   display: 'grid',
   gridTemplateColumns: '300px',
-  gridTemplateRows: `$10 calc($$contentWithoutNavbarHeight - ($10 + $10))`,
-  rowGap: '$3',
+  gridTemplateRows: `${columnHead} ${columnList} ${columnFoot}`,
+  backgroundColor: '$slate1',
+  border: '1px solid',
+  borderRadius: '$4',
+  borderColor: '$slate4',
+  marginBottom: columnMarginBottom,
 });
 
 export const ContainerHeader = styled('header', {
@@ -16,32 +28,59 @@ export const ContainerHeader = styled('header', {
   width: '100%',
   height: '100%',
   paddingX: '$3',
-  background: '$white',
-  borderRadius: '$1',
-  borderTop: '2px solid',
-  borderTopColor: '$tealA10',
 });
 
-export const Heading2 = styled('h2', {
-  fontWeight: 500,
-  fontSize: '$3',
-  color: '$tealA11',
+export const Title = styled('p', {
+  fontWeight: 'normal',
+  fontSize: '$4',
+  color: '$slate9',
+});
+
+export const HeadActionsContainer = styled('div', {
+  display: 'flex',
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+  gap: '$4',
+  width: '100%',
+  height: '100%',
+  '& svg': {
+    width: '$4',
+    height: '$4',
+    color: '$slate9',
+  },
+});
+
+export const CountPresentation = styled('div', {
+  span: {
+    color: '$slate9',
+  },
+});
+
+export const ContainerFooter = styled('footer', {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '$4',
+  width: '100%',
+  height: '100%',
 });
 
 export const Button = styled('button', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  width: '$6',
-  height: '$6',
-  borderRadius: '$circle',
-  backgroundColor: '$tealA10',
+  gap: '$4',
+  width: '100%',
+  height: '100%',
   border: '0',
+  backgroundColor: 'transparent',
   cursor: 'pointer',
-
+  '& span': {
+    color: '$slate9',
+  },
   '& svg': {
     width: '$5',
     height: '$5',
-    color: 'white',
+    color: '$slate9',
   },
 });
