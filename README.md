@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Preview:
-![Screenshot from 2023-06-10 20-08-42](https://github.com/MarcosSantosDev/beautiful-kamban/assets/26147340/1f764c89-f851-4f2b-a051-45eb5884ee67)
+![Screenshot from 2023-06-14 01-44-18](https://github.com/MarcosSantosDev/beautiful-kamban/assets/26147340/92c0748b-d317-4a94-b158-0745548dd34a)
+
 
 ## 💻 Prerequisites
 
