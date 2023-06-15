@@ -14,16 +14,17 @@ import * as S from './Card.styles';
 
 type CardProps = {
   data: CardData;
+  onClickContentCard: () => void;
 };
 
-function Card({ data }: CardProps) {
+function Card({ data, onClickContentCard }: CardProps) {
   return (
     <S.CardContainer>
       <S.CardHeader>
         <Checkbox name="card" size="sm" />
         <S.Heading>{data.content}</S.Heading>
       </S.CardHeader>
-      <S.CardContent>
+      <S.CardContent onClick={onClickContentCard}>
         <S.DetailsList>
           <S.DetailsItem>
             <S.IconContent>

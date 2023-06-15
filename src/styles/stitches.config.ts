@@ -1,4 +1,4 @@
-import { slate, tealA, violet } from '@radix-ui/colors';
+import { blackA, slate, tealA } from '@radix-ui/colors';
 import type * as Stitches from '@stitches/react';
 import { createStitches } from '@stitches/react';
 import { Roboto } from 'next/font/google';
@@ -23,7 +23,7 @@ export const {
       white: '#fff',
       ...slate,
       ...tealA,
-      ...violet,
+      ...blackA,
     },
     space: {
       1: '4px',

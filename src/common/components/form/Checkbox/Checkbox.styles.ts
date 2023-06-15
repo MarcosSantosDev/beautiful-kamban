@@ -9,10 +9,10 @@ export const Root = styled(RadixCheckbox.Root, {
   alignItems: 'center',
   justifyContent: 'center',
   border: '1px solid',
-  borderColor: '$violet6',
+  borderColor: '$slate6',
   borderRadius: '$1',
   '&:hover': {
-    backgroundColor: '$violet3',
+    backgroundColor: '$slate3',
   },
   '&:focus': {
     boxShadow: `0 0 0 2px black`,
@@ -39,7 +39,7 @@ export const Root = styled(RadixCheckbox.Root, {
 });
 
 export const Indicator = styled(RadixCheckbox.Indicator, {
-  color: '$violet11',
+  color: '$slate11',
 });
 
 export const Label = styled('label', {
